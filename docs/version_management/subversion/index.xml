@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Subversion on fgc0109的Blog</title>
+    <link>https://fgc0109.github.io/docs/version_management/subversion/</link>
+    <description>Recent content in Subversion on fgc0109的Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://fgc0109.github.io/docs/version_management/subversion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Subversion安装</title>
+      <link>https://fgc0109.github.io/docs/version_management/subversion/Subversion%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/version_management/subversion/Subversion%E5%AE%89%E8%A3%85/</guid>
+      <description>文章更新记录
+20190527:创建。
+ 一. Subversion 资料 #  Subversion 官网地址：https://subversion.apache.org/
+Subversion 官网下载地址：https://subversion.apache.org/packages.html
+ 二. Subversion 安装 #  安装 Subversion
+yum -y install subversion 配置并启动 Subversion
+sudo gitlab-ctl reconfigure  三. Subversion 管理 #  1. 停止 Subversion #  killall svnserve 2. 启动 Subversion #  例如仓库地址为 /data/subversion/ 则对应命令如下:
+-d 表示守护进程, -r 表示在后台执行
+svnserve -d -r /data/subversion/dotbqp 多个svn
+svnserve -d -r /usr/local/svn/svnrepos (这里目录配到总目录，不是仓库目录)在windows环境检出项目的时候，  仓库1的检出地址为：svn://ip地址/warehouse1 仓库2的检出地址为：svn://ip地址/warehouse2</description>
+    </item>
+    
+  </channel>
+</rss>

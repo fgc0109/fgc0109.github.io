@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on fgc0109的Blog</title>
+    <link>https://fgc0109.github.io/</link>
+    <description>Recent content in Introduction on fgc0109的Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://fgc0109.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitLab中文社区版在Ubuntu系统安装和更新</title>
+      <link>https://fgc0109.github.io/docs/version_management/git/gitlab_linux_install/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/version_management/git/gitlab_linux_install/</guid>
+      <description>更新记录
+20180303: 添加了GitLab更新部分的内容；修改了命令中的版本号；使用Markdown重写，对于代码的应用显示效果更好。
+ 一. GitLab的安装 #  GitLab中文官网地址：https://www.gitlab.com.cn/ 使用官方推荐的Omnibus 包安装方法 添加 GitLab 镜像源并安装
+curl -sS http://packages.gitlab.com.cn/install/gitlab-ce/script.deb.sh | sudo bashsudo apt-get install gitlab-ce 配置并启动 GitLab
+sudo gitlab-ctl reconfigure  二. GitLab的更新 #  首次进行更新需要添加以下命令，否则更新会出错
+sudo touch /etc/gitlab/skip-auto-migrations 更新 GitLab
+# 停止 GitLab 的运行gitlab-ctl stop# 更新 GitLabsudo apt-get update &amp;amp;&amp;amp; sudo apt-get install gitlab-ce 更新后的 GitLab 可能需要重新进行汉化 之后可以重新启动 GitLab
+sudo gitlab-ctl reconfiguresudo gitlab-ctl restart  三.</description>
+    </item>
+    
+    <item>
+      <title>Subversion安装</title>
+      <link>https://fgc0109.github.io/docs/version_management/subversion/Subversion%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/version_management/subversion/Subversion%E5%AE%89%E8%A3%85/</guid>
+      <description>文章更新记录
+20190527:创建。
+ 一. Subversion 资料 #  Subversion 官网地址：https://subversion.apache.org/
+Subversion 官网下载地址：https://subversion.apache.org/packages.html
+ 二. Subversion 安装 #  安装 Subversion
+yum -y install subversion 配置并启动 Subversion
+sudo gitlab-ctl reconfigure  三. Subversion 管理 #  1. 停止 Subversion #  killall svnserve 2. 启动 Subversion #  例如仓库地址为 /data/subversion/ 则对应命令如下:
+-d 表示守护进程, -r 表示在后台执行
+svnserve -d -r /data/subversion/dotbqp 多个svn
+svnserve -d -r /usr/local/svn/svnrepos (这里目录配到总目录，不是仓库目录)在windows环境检出项目的时候，  仓库1的检出地址为：svn://ip地址/warehouse1 仓库2的检出地址为：svn://ip地址/warehouse2</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/linux/Linux%E4%BD%BF%E7%94%A8fstab%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/linux/Linux%E4%BD%BF%E7%94%A8fstab%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/</guid>
+      <description>本文首先记录“移动硬盘挂载”实际发生的问题，然后浅析了fstab这一重要配置文件和使用，最后总结了Raspberry Pi上自动挂载移动硬盘的方法。本文主要基于Raspberry Pi和Raspbian描述问题，当然它也广泛适用于各Linux发行版环境中 ; )。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/shortcodes/buttons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/shortcodes/buttons/</guid>
+      <description>Buttons #  Buttons are styled links that can lead to local page or external link.
+Example #  {{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}} {{&amp;lt; button href=&amp;#34;https://github.com/alex-shpak/hugo-book&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}  Get Home  Contribute  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/shortcodes/columns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/shortcodes/columns/</guid>
+      <description>Columns #  Columns help organize shorter pieces of content horizontally for readability.
+{{&amp;lt; columns &amp;gt;}} &amp;lt;!-- begin columns block --&amp;gt; # Left Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Mid Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Right Content Lorem markdownum insigne... {{&amp;lt; /columns &amp;gt;}} Example #  Left Content Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/shortcodes/details/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/shortcodes/details/</guid>
+      <description>Details #  Details shortcode is a helper for details html5 element. It is going to replace expand shortcode.
+Example #  {{&amp;lt; details &amp;#34;Title&amp;#34; [open] &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}} {{&amp;lt; details title=&amp;#34;Title&amp;#34; open=true &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}} Title Markdown content Lorem markdownum insigne&amp;hellip;   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/shortcodes/expand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/shortcodes/expand/</guid>
+      <description>Expand #  Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
+Example #  Default #  {{&amp;lt; expand &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}}   Expand ↕  Markdown content Lorem markdownum insigne&amp;hellip;    With Custom Label #  {{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;...&amp;#34; &amp;gt;}} ## Markdown content Lorem markdownum insigne.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/shortcodes/hints/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/shortcodes/hints/</guid>
+      <description>Hints #  Hint shortcode can be used as hint/alerts/notification block.
+There are 3 colors to choose: info, warning and danger.
+{{&amp;lt; hint [info|warning|danger] &amp;gt;}} **Markdown content** Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa {{&amp;lt; /hint &amp;gt;}} Example #  Markdown content
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa  Markdown content</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/shortcodes/katex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/shortcodes/katex/</guid>
+      <description>KaTeX #  KaTeX shortcode let you render math typesetting in markdown document. See KaTeX
+Example #  {{&amp;lt; katex [display] [class=&amp;#34;text-center&amp;#34;] &amp;gt;}} f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi {{&amp;lt; /katex &amp;gt;}}     \[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]    Display Mode Example #  Here is some inline example:  \(\pi(x)\)  , rendered in the same line. And below is display example, having display: block  \[f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi\]  Text continues here.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/shortcodes/mermaid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/shortcodes/mermaid/</guid>
+      <description>Mermaid Chart #   MermaidJS is library for generating svg charts and diagrams from text.
+Override Mermaid Initialization Config
+To override the initialization config for Mermaid, create a mermaid.json file in your assets folder!
+ Example #  {{&amp;lt; mermaid [class=&amp;#34;text-center&amp;#34;]&amp;gt;}} stateDiagram-v2 State1: The state with a note note right of State1 Important information! You can write notes. end note State1 --&amp;gt; State2 note left of State2 : This is the note to the left.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/shortcodes/section/first-page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/shortcodes/section/first-page/</guid>
+      <description>First page #  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/shortcodes/section/second-page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/shortcodes/section/second-page/</guid>
+      <description>Second Page #  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/shortcodes/tabs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/shortcodes/tabs/</guid>
+      <description>Tabs #  Tabs let you organize content by context, for example installation instructions for each supported platform.
+{{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}} {{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabs &amp;gt;}} Example #  MacOS MacOS This is tab MacOS content.
+Lorem markdownum insigne. Olympo signis Delphis!</description>
+    </item>
+    
+  </channel>
+</rss>

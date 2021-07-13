@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on fgc0109的Blog</title>
+    <link>https://fgc0109.github.io/docs/version_management/git/</link>
+    <description>Recent content in Git on fgc0109的Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://fgc0109.github.io/docs/version_management/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitLab中文社区版在Ubuntu系统安装和更新</title>
+      <link>https://fgc0109.github.io/docs/version_management/git/gitlab_linux_install/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/version_management/git/gitlab_linux_install/</guid>
+      <description>更新记录
+20180303: 添加了GitLab更新部分的内容；修改了命令中的版本号；使用Markdown重写，对于代码的应用显示效果更好。
+ 一. GitLab的安装 #  GitLab中文官网地址：https://www.gitlab.com.cn/ 使用官方推荐的Omnibus 包安装方法 添加 GitLab 镜像源并安装
+curl -sS http://packages.gitlab.com.cn/install/gitlab-ce/script.deb.sh | sudo bashsudo apt-get install gitlab-ce 配置并启动 GitLab
+sudo gitlab-ctl reconfigure  二. GitLab的更新 #  首次进行更新需要添加以下命令，否则更新会出错
+sudo touch /etc/gitlab/skip-auto-migrations 更新 GitLab
+# 停止 GitLab 的运行gitlab-ctl stop# 更新 GitLabsudo apt-get update &amp;amp;&amp;amp; sudo apt-get install gitlab-ce 更新后的 GitLab 可能需要重新进行汉化 之后可以重新启动 GitLab
+sudo gitlab-ctl reconfiguresudo gitlab-ctl restart  三.</description>
+    </item>
+    
+  </channel>
+</rss>

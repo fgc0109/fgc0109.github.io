@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="文章更新记录
+20190527:创建。
+ 一. Subversion 资料 #  Subversion 官网地址：https://subversion.apache.org/
+Subversion 官网下载地址：https://subversion.apache.org/packages.html
+ 二. Subversion 安装 #  安装 Subversion
+yum -y install subversion 配置并启动 Subversion
+sudo gitlab-ctl reconfigure  三. Subversion 管理 #  1. 停止 Subversion #  killall svnserve 2. 启动 Subversion #  例如仓库地址为 /data/subversion/ 则对应命令如下:
+-d 表示守护进程, -r 表示在后台执行
+svnserve -d -r /data/subversion/dotbqp 多个svn
+svnserve -d -r /usr/local/svn/svnrepos (这里目录配到总目录，不是仓库目录)在windows环境检出项目的时候，  仓库1的检出地址为：svn://ip地址/warehouse1 仓库2的检出地址为：svn://ip地址/warehouse2">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Subversion安装" />
+<meta property="og:description" content="文章更新记录
+20190527:创建。
+ 一. Subversion 资料 #  Subversion 官网地址：https://subversion.apache.org/
+Subversion 官网下载地址：https://subversion.apache.org/packages.html
+ 二. Subversion 安装 #  安装 Subversion
+yum -y install subversion 配置并启动 Subversion
+sudo gitlab-ctl reconfigure  三. Subversion 管理 #  1. 停止 Subversion #  killall svnserve 2. 启动 Subversion #  例如仓库地址为 /data/subversion/ 则对应命令如下:
+-d 表示守护进程, -r 表示在后台执行
+svnserve -d -r /data/subversion/dotbqp 多个svn
+svnserve -d -r /usr/local/svn/svnrepos (这里目录配到总目录，不是仓库目录)在windows环境检出项目的时候，  仓库1的检出地址为：svn://ip地址/warehouse1 仓库2的检出地址为：svn://ip地址/warehouse2" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/docs/version_management/Subversion%E5%AE%89%E8%A3%85/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2014-09-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-09-28T00:00:00+00:00" />
+
+<title>Subversion安装 | Hugo Book</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW&#43;8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.586b6840e966ab5dc7932e412b1b2495995287c2e971e65f09d1ac6dbf8e0559.js" integrity="sha256-WGtoQOlmq13Hky5BKxsklZlSh8LpceZfCdGsbb&#43;OBVk=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Hugo Book</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>VersionManagement</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/version_management/Subversion%E5%AE%89%E8%A3%85/" class=" active">Subversion安装</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/version_management/gitlab_linux_install/" class="">Gitlab Linux Install</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4e46b01272d410b3a99461d79326ddf4" class="toggle"  />
+    <label for="section-4e46b01272d410b3a99461d79326ddf4" class="flex justify-between">
+      <a role="button" class="">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="https://example.com/docs/shortcodes/section/" class="">Section</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/shortcodes/section/first-page/" class="">First Page</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/shortcodes/section/second-page/" class="">Second Page</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://example.com/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/alex-shpak/hugo-book" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/hugo-book/" target="_blank" rel="noopener">
+        Hugo Themes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Subversion安装</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一-subversion-资料"><strong>一. Subversion 资料</strong></a></li>
+            <li><a href="#二-subversion-安装"><strong>二. Subversion 安装</strong></a></li>
+            <li><a href="#三-subversion-管理"><strong>三. Subversion 管理</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><hr>
+<p>文章更新记录</p>
+<p>20190527:创建。</p>
+<hr>
+<h3 id="一-subversion-资料">
+  <strong>一. Subversion 资料</strong>
+  <a class="anchor" href="#%e4%b8%80-subversion-%e8%b5%84%e6%96%99">#</a>
+</h3>
+<p>Subversion 官网地址：https://subversion.apache.org/</p>
+<p>Subversion 官网下载地址：https://subversion.apache.org/packages.html</p>
+<hr>
+<h3 id="二-subversion-安装">
+  <strong>二. Subversion 安装</strong>
+  <a class="anchor" href="#%e4%ba%8c-subversion-%e5%ae%89%e8%a3%85">#</a>
+</h3>
+<p>安装 Subversion</p>
+<pre><code>yum -y install subversion
+</code></pre>
+<p>配置并启动 Subversion</p>
+<pre><code>sudo gitlab-ctl reconfigure
+</code></pre>
+<hr>
+<h3 id="三-subversion-管理">
+  <strong>三. Subversion 管理</strong>
+  <a class="anchor" href="#%e4%b8%89-subversion-%e7%ae%a1%e7%90%86">#</a>
+</h3>
+<h4 id="1-停止-subversion">
+  1. 停止 Subversion
+  <a class="anchor" href="#1-%e5%81%9c%e6%ad%a2-subversion">#</a>
+</h4>
+<pre><code>killall svnserve
+</code></pre>
+<h4 id="2-启动-subversion">
+  2. 启动 Subversion
+  <a class="anchor" href="#2-%e5%90%af%e5%8a%a8-subversion">#</a>
+</h4>
+<p>例如仓库地址为 /data/subversion/ 则对应命令如下:</p>
+<p>-d 表示守护进程, -r 表示在后台执行</p>
+<pre><code>svnserve -d -r /data/subversion/dotbqp
+</code></pre>
+<p>多个svn</p>
+<pre><code>svnserve -d -r /usr/local/svn/svnrepos   (这里目录配到总目录，不是仓库目录)
+
+在windows环境检出项目的时候， 
+</code></pre>
+<p>仓库1的检出地址为：svn://ip地址/warehouse1 
+仓库2的检出地址为：svn://ip地址/warehouse2</p>
+<h4 id="3-备份-subversion">
+  3. 备份 Subversion
+  <a class="anchor" href="#3-%e5%a4%87%e4%bb%bd-subversion">#</a>
+</h4>
+<p>关闭所有运行的进程,并确认没有程序在访问存储库(如 httpd,svnserve 或本地用户在直接访问)</p>
+<p>压缩备份</p>
+<pre><code>svnadmin dump /data/subversion/ | gzip &gt; /data/subversion-backup.gz
+</code></pre>
+<p>直接备份</p>
+<pre><code>svnadmin dump /data/subversion/ &gt; /data/subversion-backup.dump
+</code></pre>
+<h4 id="4-还原-subversion">
+  4. 还原 Subversion
+  <a class="anchor" href="#4-%e8%bf%98%e5%8e%9f-subversion">#</a>
+</h4>
+<p>新建一个版本库，用来存放要还原的内容：</p>
+<pre><code>svnadmin create /data/subversion/dotbqp
+</code></pre>
+<p>进行还原</p>
+<pre><code>gzip -cd /data/subversion-backup.gz &gt; /data/subversion-backup.dump
+svnadmin load /data/subversion/dotbqp &lt; /data/subversion-backup.dump
+
+
+scp /data/subversion-backup.gz root@192.168.11.226:/data/subversion-backup.gz
+scp root@192.168.0.5:/data/subversion-backup.gz /data/subversion-backup.gz
+</code></pre>
+<p>检查版本库
+svnadmin verify</p>
+<h4 id="5-nginx-反向代理svn">
+  5. Nginx 反向代理SVN
+  <a class="anchor" href="#5-nginx-%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86svn">#</a>
+</h4>
+<p>安装配置apache</p>
+<p>yum install httpd</p>
+<p>安装插件
+yum install mod_dav_svn -y</p>
+<p>systemctl enable httpd</p>
+<p>注意要把httpd的默认80端口换掉，避免与nginx冲突</p>
+<p>vim /etc/httpd/conf/httpd.conf</p>
+<p>LoadModule dav_module modules/mod_dav.so
+LoadModule dav_svn_module modules/mod_dav_svn.so</p>
+<p>Listen 8080</p>
+<p>设置版本库网站，要注意的是，版本库的网站不是iF.SVNAdmin的网站
+vim /etc/httpd/conf.d/w_svn_8081.conf</p>
+<p>Listen 8081
+<Location />
+DAV svn
+SVNParentPath /data/subversion
+AuthType Basic
+AuthName &ldquo;svn repos&rdquo;
+AuthzSVNAnonymous off
+AuthUserFile /data/subversion/dotbqp/conf/passwd
+AuthzSVNAccessFile /data/subversion/dotbqp/conf/authz
+Require valid-user
+</Location></p>
+<p>访问路径
+[host]:[port]/[repo]</p>
+<p>添加apache使用的密文密码</p>
+<p>htpasswd -nb fgc01 1EF%%pe#dwO*2i3Z
+htpasswd -nb ssq01 ZYoolPi$4Cw$nmx!
+htpasswd -nb zhm01 DPce$!bDBlDkwtNO</p>
+<p>fgc01:$apr1$OQBUqH.k$Lo4gnejwzT8sm42asqAFW1
+ssq01:$apr1$3zyhJREC$zfztMHm78.K2a7iAGqieU/
+zhm01:$apr1$meb/gokz$SFGTFIy1YpZbd3UIZTWsM.</p>
+<p>权限
+chmod -R 777 /var/lib/nginx/tmp
+chmod -R 777 /var/lib/nginx
+chmod -R 777 /data/subversion</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+
+  
+    
+  
+    
+  
+    
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://example.com/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://example.com/ru/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Russian
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://example.com/zh/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Chinese
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/version_management/Subversion%e5%ae%89%e8%a3%85.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#一-subversion-资料"><strong>一. Subversion 资料</strong></a></li>
+            <li><a href="#二-subversion-安装"><strong>二. Subversion 安装</strong></a></li>
+            <li><a href="#三-subversion-管理"><strong>三. Subversion 管理</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

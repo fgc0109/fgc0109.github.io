@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux相关 on fgc0109的Blog</title>
+    <link>https://fgc0109.github.io/docs/linux/</link>
+    <description>Recent content in Linux相关 on fgc0109的Blog</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://fgc0109.github.io/docs/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://fgc0109.github.io/docs/linux/Linux%E4%BD%BF%E7%94%A8fstab%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/linux/Linux%E4%BD%BF%E7%94%A8fstab%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/</guid>
+      <description>本文首先记录“移动硬盘挂载”实际发生的问题，然后浅析了fstab这一重要配置文件和使用，最后总结了Raspberry Pi上自动挂载移动硬盘的方法。本文主要基于Raspberry Pi和Raspbian描述问题，当然它也广泛适用于各Linux发行版环境中 ; )。</description>
+    </item>
+    
+  </channel>
+</rss>
