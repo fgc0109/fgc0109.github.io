@@ -4,48 +4,13 @@
     <title>Git on fgc0109的Blog</title>
     <link>https://fgc0109.github.io/docs/version_management/git/</link>
     <description>Recent content in Git on fgc0109的Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://fgc0109.github.io/docs/version_management/git/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Git修改提交信息</title>
-      <link>https://fgc0109.github.io/docs/version_management/git/git_amend_commit_info/</link>
-      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://fgc0109.github.io/docs/version_management/git/git_amend_commit_info/</guid>
-      <description>Git修改提交信息 #  很容易犯在不同库中提交代码发现默认配置的author信息没有变更，
- 参考链接 #  https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2
- 1. 修改最近一次提交 #  如果只需要最近一次提交，那么很简单直接使用git commit –amend就可以搞定
-$ git commit --amend 上面这条命令会将最后一次的提交信息载入到编辑器中供你修改。 当保存并关闭编辑器后，编辑器会将更新后的提交信息写入新提交中，它会成为新的最后一次提交。
-git修改提交历史中的author信息
- 解决方法二
-如果是多个修改，那么就需要使用到git filter-branch这个工具来做批量修改 为了方便大家使用，封装了一个简单的shell脚本，直接修改[XXX]中的变量为对应的值即可
-#!/bin/sh
-git filter-branch &amp;ndash;env-filter &#39;
-an=&amp;quot;$GIT_AUTHOR_NAME&amp;quot; am=&amp;quot;$GIT_AUTHOR_EMAIL&amp;quot; cn=&amp;quot;$GIT_COMMITTER_NAME&amp;quot; cm=&amp;quot;$GIT_COMMITTER_EMAIL&amp;quot;
-if [ &amp;ldquo;$GIT_COMMITTER_EMAIL&amp;rdquo; = &amp;ldquo;[Your Old Email]&amp;rdquo; ] then cn=&amp;quot;[Your New Author Name]&amp;quot; cm=&amp;quot;[Your New Email]&amp;quot; fi if [ &amp;ldquo;$GIT_AUTHOR_EMAIL&amp;rdquo; = &amp;ldquo;[Your Old Email]&amp;rdquo; ] then an=&amp;quot;[Your New Author Name]&amp;quot; am=&amp;quot;[Your New Email]&amp;quot; fi</description>
-    </item>
-    
-    <item>
-      <title>Git添加子模块</title>
-      <link>https://fgc0109.github.io/docs/version_management/git/git_add_submodule/</link>
-      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://fgc0109.github.io/docs/version_management/git/git_add_submodule/</guid>
-      <description>Git添加子模块 #  某个工作中的项目需要包含并使用另一个项目。 也许是第三方库，或者你独立开发的，用于多个父项目的库。 现在问题来了：你想要把它们当做两个独立的项目，同时又想在一个项目中使用另一个。
- 1. 子模块的添加 #  添加子模块非常简单，命令如下：
-git submodule add {{url}} {{path}} 其中，url为子模块的路径，path为该子模块存储的目录路径，例如
-git submodule add https://github.com/{{name_of_user}}/{{name_of_repo}}.git {{name_of_path}} 项目下面会添加新的 .gitmodules 文件。 该配置文件保存了项目 URL 与已经拉取的本地目录之间的映射：
-[submodule &amp;quot;{{name_of_path}}&amp;quot;]path = {{name_of_path}}url = https://github.com/{{name_of_user}}/{{name_of_repo}}  2. 子模块的使用 #  克隆项目后，默认子模块目录下无任何内容。需要在项目根目录执行如下命令完成子模块的下载：
-git submodule initgit submodule update 或：
-git submodule update --init --recursive 执行后，子模块目录下就有了源码</description>
-    </item>
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://fgc0109.github.io/docs/version_management/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitLab中文社区版在Ubuntu系统安装和更新</title>
-      <link>https://fgc0109.github.io/docs/version_management/git/gitlab_linux_install/</link>
+      <link>https://fgc0109.github.io/docs/version_management/git/00_gitlab_linux_install/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://fgc0109.github.io/docs/version_management/git/gitlab_linux_install/</guid>
+      <guid>https://fgc0109.github.io/docs/version_management/git/00_gitlab_linux_install/</guid>
       <description>更新记录
 20180303: 添加了GitLab更新部分的内容；修改了命令中的版本号；使用Markdown重写，对于代码的应用显示效果更好。
  一. GitLab的安装 #  GitLab中文官网地址：https://www.gitlab.com.cn/ 使用官方推荐的Omnibus 包安装方法 添加 GitLab 镜像源并安装
@@ -57,13 +22,44 @@ sudo gitlab-ctl reconfiguresudo gitlab-ctl restart  三.</description>
     </item>
     
     <item>
-      <title>Git删除文件或文件夹的提交记录</title>
-      <link>https://fgc0109.github.io/docs/version_management/git/git_delete_file_and_folder/</link>
+      <title>Git修改提交信息</title>
+      <link>https://fgc0109.github.io/docs/version_management/git/10_git_amend_commit_info/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/version_management/git/10_git_amend_commit_info/</guid>
+      <description>Git修改提交信息 #  很容易犯在不同库中提交代码发现默认配置的author信息没有变更，
+ 参考链接 #  https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2
+ 1. 修改最近一次提交 #  如果只需要最近一次提交，那么很简单直接使用git commit –amend就可以搞定
+$ git commit --amend 上面这条命令会将最后一次的提交信息载入到编辑器中供你修改。 当保存并关闭编辑器后，编辑器会将更新后的提交信息写入新提交中，它会成为新的最后一次提交。
+在命令中直接修改git修改提交历史中的author信息
+git commit --amend --author=&amp;quot;{new_author} {&amp;lt;new_email@address.com&amp;gt;}&amp;quot;  2. 修改多个提交 #  如果是多个修改，那么就需要使用到git filter-branch这个工具来做批量修改 为了方便大家使用，封装了一个简单的shell脚本，直接修改[XXX]中的变量为对应的值即可
+#!/bin/shgit filter-branch --env-filter &#39;an=&amp;quot;$GIT_AUTHOR_NAME&amp;quot;am=&amp;quot;$GIT_AUTHOR_EMAIL&amp;quot;cn=&amp;quot;$GIT_COMMITTER_NAME&amp;quot;cm=&amp;quot;$GIT_COMMITTER_EMAIL&amp;quot;if [ &amp;quot;$GIT_COMMITTER_EMAIL&amp;quot; = &amp;quot;[Your Old Email]&amp;quot; ]thencn=&amp;quot;[Your New Author Name]&amp;quot;cm=&amp;quot;[Your New Email]&amp;quot;fiif [ &amp;quot;$GIT_AUTHOR_EMAIL&amp;quot; = &amp;quot;[Your Old Email]&amp;quot; ]thenan=&amp;quot;[Your New Author Name]&amp;quot;am=&amp;quot;[Your New Email]&amp;quot;fiexport GIT_AUTHOR_NAME=&amp;quot;$an&amp;quot;export GIT_AUTHOR_EMAIL=&amp;quot;$am&amp;quot;export GIT_COMMITTER_NAME=&amp;quot;$cn&amp;quot;export GIT_COMMITTER_EMAIL=&amp;quot;$cm&amp;quot;&#39; </description>
+    </item>
+    
+    <item>
+      <title>Git添加子模块</title>
+      <link>https://fgc0109.github.io/docs/version_management/git/10_git_add_submodule/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://fgc0109.github.io/docs/version_management/git/10_git_add_submodule/</guid>
+      <description>Git添加子模块 #  某个工作中的项目需要包含并使用另一个项目。 也许是第三方库，或者你独立开发的，用于多个父项目的库。 现在问题来了：你想要把它们当做两个独立的项目，同时又想在一个项目中使用另一个。
+ 参考链接 #  https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97
+ 1. 子模块的添加 #  添加子模块非常简单，命令如下：
+git submodule add {url} {path} 其中，url为子模块的路径，path为该子模块存储的目录路径，例如
+git submodule add https://github.com/{name_of_user}/{name_of_repo}.git {name_of_path} 项目下面会添加新的 .gitmodules 文件。 该配置文件保存了项目 URL 与已经拉取的本地目录之间的映射：
+[submodule &amp;quot;{name_of_path}&amp;quot;]path = {name_of_path}url = https://github.com/{name_of_user}/{name_of_repo}  2. 子模块的使用 #  克隆项目后，默认子模块目录下无任何内容。需要在项目根目录执行如下命令完成子模块的下载：
+git submodule initgit submodule update 或：
+git submodule update --init --recursive 执行后，子模块目录下就有了源码</description>
+    </item>
+    
+    <item>
+      <title>Git删除提交记录</title>
+      <link>https://fgc0109.github.io/docs/version_management/git/10_git_delete_file_and_folder/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://fgc0109.github.io/docs/version_management/git/git_delete_file_and_folder/</guid>
-      <description>重写历史 #  在使用 Git 时，可能偶然地提交了一个包括一个密码的文件、一些巨大并且无用的二进制文件等情况，你可能想要修订提交历史
-参考 https://git-scm.com/docs/git-filter-branch
+      <guid>https://fgc0109.github.io/docs/version_management/git/10_git_delete_file_and_folder/</guid>
+      <description>Git删除文件或文件夹的提交记录 #   参考链接 #  https://git-scm.com/docs/git-filter-branch
+ 重写历史 #  在使用 Git 时，可能偶然地提交了一个包括一个密码的文件、一些巨大并且无用的二进制文件等情况，你可能想要修订提交历史
 命令解释
 git filter-branchgit filter-branch [--env-filter &amp;lt;command&amp;gt;][--tree-filter &amp;lt;command&amp;gt;][--index-filter &amp;lt;command&amp;gt;][--parent-filter &amp;lt;command&amp;gt;]&amp;lt;br&amp;gt;[--msg-filter &amp;lt;command&amp;gt;][--commit-filter &amp;lt;command&amp;gt;][--tag-name-filter &amp;lt;command&amp;gt;][--subdirectory-filter &amp;lt;directory&amp;gt;]&amp;lt;br&amp;gt;[--prune-empty][--original &amp;lt;namespace&amp;gt;][-d &amp;lt;directory&amp;gt;][-f|--force][--][&amp;lt;rev-list options&amp;gt;…​] 重置指定分支的 Git 历史记录，同时在每一个提交结点上运用指定的过滤器。
    参数 解释     &amp;ndash;env-filter &amp;lt;command&amp;gt; 修改将在其中执行提交的环境，常用于重写作者/提交者名称/电子邮件/时间环境变量   &amp;ndash;tree-filter &amp;lt;command&amp;gt; 重写树及其内容的过滤器   &amp;ndash;index-filter &amp;lt;command&amp;gt; 重写索引的过滤器。类似于树过滤器，但不检出树，因此速度更快。   &amp;ndash;parent-filter &amp;lt;command&amp;gt; 用于重写提交的父列表的过滤器。它将在stdin上接收父字符串，并在stdout上输出新的父字符串。   &amp;ndash;msg-filter &amp;lt;command&amp;gt; 重写提交消息。   &amp;ndash;commit-filter &amp;lt;command&amp;gt; 执行提交的过滤器   &amp;ndash;tag-name-filter &amp;lt;command&amp;gt; 重写标签名称，原始标签不会被删除，但可以被覆盖   &amp;ndash;subdirectory-filter &amp;lt;directory&amp;gt; 只查看涉及给定子目录的历史记录   &amp;ndash;prune-empty 过滤常常生成空的提交，从而使树保持不变。此参数会删除空提交。因此仅适用于只有一个父对象的提交它将保留合并点。与&amp;ndash;commit-filter不兼容。   &amp;ndash;original &amp;lt;namespace&amp;gt; 使用此选项设置原始提交将存储在其中的名称空间。默认值是refs/original。   -d &amp;lt;directory&amp;gt; 使用此选项可将路径设置为用于重写的临时目录。使用tree-filter, 该命令需要暂时将该树检出到某个目录，大型项目的情况下可能消耗很大空间。默认情况下，它在.</description>

@@ -3,17 +3,29 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Columns #  Columns help organize shorter pieces of content horizontally for readability.
-{{&lt; columns &gt;}} &lt;!-- begin columns block --&gt; # Left Content Lorem markdownum insigne... &lt;---&gt; &lt;!-- magic separator, between columns --&gt; # Mid Content Lorem markdownum insigne... &lt;---&gt; &lt;!-- magic separator, between columns --&gt; # Right Content Lorem markdownum insigne... {{&lt; /columns &gt;}} Example #  Left Content Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Columns #  Columns help organize shorter pieces of content horizontally for readability.
-{{&lt; columns &gt;}} &lt;!-- begin columns block --&gt; # Left Content Lorem markdownum insigne... &lt;---&gt; &lt;!-- magic separator, between columns --&gt; # Mid Content Lorem markdownum insigne... &lt;---&gt; &lt;!-- magic separator, between columns --&gt; # Right Content Lorem markdownum insigne... {{&lt; /columns &gt;}} Example #  Left Content Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!" />
+<meta name="description" content="Git添加子模块 #  某个工作中的项目需要包含并使用另一个项目。 也许是第三方库，或者你独立开发的，用于多个父项目的库。 现在问题来了：你想要把它们当做两个独立的项目，同时又想在一个项目中使用另一个。
+ 参考链接 #  https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97
+ 1. 子模块的添加 #  添加子模块非常简单，命令如下：
+git submodule add {url} {path} 其中，url为子模块的路径，path为该子模块存储的目录路径，例如
+git submodule add https://github.com/{name_of_user}/{name_of_repo}.git {name_of_path} 项目下面会添加新的 .gitmodules 文件。 该配置文件保存了项目 URL 与已经拉取的本地目录之间的映射：
+[submodule &quot;{name_of_path}&quot;]path = {name_of_path}url = https://github.com/{name_of_user}/{name_of_repo}  2. 子模块的使用 #  克隆项目后，默认子模块目录下无任何内容。需要在项目根目录执行如下命令完成子模块的下载：
+git submodule initgit submodule update 或：
+git submodule update --init --recursive 执行后，子模块目录下就有了源码">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Git添加子模块" />
+<meta property="og:description" content="Git添加子模块 #  某个工作中的项目需要包含并使用另一个项目。 也许是第三方库，或者你独立开发的，用于多个父项目的库。 现在问题来了：你想要把它们当做两个独立的项目，同时又想在一个项目中使用另一个。
+ 参考链接 #  https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97
+ 1. 子模块的添加 #  添加子模块非常简单，命令如下：
+git submodule add {url} {path} 其中，url为子模块的路径，path为该子模块存储的目录路径，例如
+git submodule add https://github.com/{name_of_user}/{name_of_repo}.git {name_of_path} 项目下面会添加新的 .gitmodules 文件。 该配置文件保存了项目 URL 与已经拉取的本地目录之间的映射：
+[submodule &quot;{name_of_path}&quot;]path = {name_of_path}url = https://github.com/{name_of_user}/{name_of_repo}  2. 子模块的使用 #  克隆项目后，默认子模块目录下无任何内容。需要在项目根目录执行如下命令完成子模块的下载：
+git submodule initgit submodule update 或：
+git submodule update --init --recursive 执行后，子模块目录下就有了源码" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fgc0109.github.io/docs/_shortcodes/columns/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://fgc0109.github.io/docs/version_management/git/10_git_add_submodule/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2020-05-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-14T03:02:00+08:00" />
 
-
-
-<title>Columns | fgc0109的Blog</title>
+<title>Git添加子模块 | fgc0109的Blog</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.958cea7827621d6fbcb3acf091344c3e44e3d2a9428f9c3c38bb9eb37bf8c45d.css" integrity="sha256-lYzqeCdiHW&#43;8s6zwkTRMPkTj0qlCj5w8OLues3v4xF0=" crossorigin="anonymous">
@@ -105,7 +117,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-c6870a5dad4489bf5fddd5925911716d" class="toggle"  />
+    <input type="checkbox" id="section-c6870a5dad4489bf5fddd5925911716d" class="toggle" checked />
     <label for="section-c6870a5dad4489bf5fddd5925911716d" class="flex justify-between">
       <a role="button" class="">版本管理工具</a>
     </label>
@@ -155,7 +167,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-b44dcf28aad2f72dbbcb7dde4da98479" class="toggle"  />
+    <input type="checkbox" id="section-b44dcf28aad2f72dbbcb7dde4da98479" class="toggle" checked />
     <label for="section-b44dcf28aad2f72dbbcb7dde4da98479" class="flex justify-between">
       <a role="button" class="">Git</a>
     </label>
@@ -197,7 +209,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="https://fgc0109.github.io/docs/version_management/git/10_git_add_submodule/" class="">Git添加子模块</a>
+    <a href="https://fgc0109.github.io/docs/version_management/git/10_git_add_submodule/" class=" active">Git添加子模块</a>
   
 
         </li>
@@ -286,7 +298,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Columns</strong>
+  <strong>Git添加子模块</strong>
 
   <label for="toc-control">
     
@@ -302,9 +314,15 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#columns">Columns</a>
+    <li><a href="#git添加子模块">Git添加子模块</a>
       <ul>
-        <li><a href="#example">Example</a></li>
+        <li>
+          <ul>
+            <li><a href="#参考链接">参考链接</a></li>
+            <li><a href="#1-子模块的添加">1. 子模块的添加</a></li>
+            <li><a href="#2-子模块的使用">2. 子模块的使用</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -319,55 +337,48 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="columns">
-  Columns
-  <a class="anchor" href="#columns">#</a>
+  <article class="markdown"><h1 id="git添加子模块">
+  Git添加子模块
+  <a class="anchor" href="#git%e6%b7%bb%e5%8a%a0%e5%ad%90%e6%a8%a1%e5%9d%97">#</a>
 </h1>
-<p>Columns help organize shorter pieces of content horizontally for readability.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{&lt; <span style="color:#f92672">columns</span> &gt;}} <span style="color:#75715e">&lt;!-- begin columns block --&gt;</span>
-# Left Content
-Lorem markdownum insigne...
-
-&lt;<span style="color:#f92672">---</span>&gt; <span style="color:#75715e">&lt;!-- magic separator, between columns --&gt;</span>
-
-# Mid Content
-Lorem markdownum insigne...
-
-&lt;<span style="color:#f92672">---</span>&gt; <span style="color:#75715e">&lt;!-- magic separator, between columns --&gt;</span>
-
-# Right Content
-Lorem markdownum insigne...
-{{&lt; /<span style="color:#f92672">columns</span> &gt;}}
-</code></pre></div><h2 id="example">
-  Example
-  <a class="anchor" href="#example">#</a>
-</h2>
-<div class="book-columns flex flex-wrap">
-  
-  <div class="flex-even markdown-inner">
-    <h2 id="left-content">Left Content</h2>
-<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-protulit, sed sed aere valvis inhaesuro Pallas animam: qui <em>quid</em>, ignes.
-Miseratus fonte Ditis conubia.
-  </div>
-  
-  <div class="flex-even markdown-inner">
-    <h2 id="mid-content">Mid Content</h2>
-<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter!
-  </div>
-  
-  <div class="flex-even markdown-inner">
-    <h2 id="right-content">Right Content</h2>
-<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-protulit, sed sed aere valvis inhaesuro Pallas animam: qui <em>quid</em>, ignes.
-Miseratus fonte Ditis conubia.
-  </div>
-  
-</div>
-
+<p>某个工作中的项目需要包含并使用另一个项目。 
+也许是第三方库，或者你独立开发的，用于多个父项目的库。 
+现在问题来了：你想要把它们当做两个独立的项目，同时又想在一个项目中使用另一个。</p>
+<hr>
+<h3 id="参考链接">
+  参考链接
+  <a class="anchor" href="#%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5">#</a>
+</h3>
+<p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97">https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97</a></p>
+<hr>
+<h3 id="1-子模块的添加">
+  1. 子模块的添加
+  <a class="anchor" href="#1-%e5%ad%90%e6%a8%a1%e5%9d%97%e7%9a%84%e6%b7%bb%e5%8a%a0">#</a>
+</h3>
+<p>添加子模块非常简单，命令如下：</p>
+<pre><code>git submodule add {url} {path}
+</code></pre>
+<p>其中，url为子模块的路径，path为该子模块存储的目录路径，例如</p>
+<pre><code>git submodule add https://github.com/{name_of_user}/{name_of_repo}.git {name_of_path}
+</code></pre>
+<p>项目下面会添加新的 .gitmodules 文件。 该配置文件保存了项目 URL 与已经拉取的本地目录之间的映射：</p>
+<pre><code>[submodule &quot;{name_of_path}&quot;]
+    path = {name_of_path}
+    url = https://github.com/{name_of_user}/{name_of_repo}
+</code></pre>
+<hr>
+<h3 id="2-子模块的使用">
+  2. 子模块的使用
+  <a class="anchor" href="#2-%e5%ad%90%e6%a8%a1%e5%9d%97%e7%9a%84%e4%bd%bf%e7%94%a8">#</a>
+</h3>
+<p>克隆项目后，默认子模块目录下无任何内容。需要在项目根目录执行如下命令完成子模块的下载：</p>
+<pre><code>git submodule init
+git submodule update
+</code></pre>
+<p>或：</p>
+<pre><code>git submodule update --init --recursive
+</code></pre>
+<p>执行后，子模块目录下就有了源码</p>
 </article>
  
       
@@ -409,9 +420,15 @@ Miseratus fonte Ditis conubia.
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#columns">Columns</a>
+    <li><a href="#git添加子模块">Git添加子模块</a>
       <ul>
-        <li><a href="#example">Example</a></li>
+        <li>
+          <ul>
+            <li><a href="#参考链接">参考链接</a></li>
+            <li><a href="#1-子模块的添加">1. 子模块的添加</a></li>
+            <li><a href="#2-子模块的使用">2. 子模块的使用</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
